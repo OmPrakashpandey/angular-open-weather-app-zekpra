@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+        <div class="text-center p-3 m-3" (click)="openForm()" *ngIf="blankPanel">Click</div>
+        <form *ngIf="initialForm" [formGroup]="cityForm" (submit)="onSubmit()">
+            <div class="form-group">
+                <label for="city">Enter a city</label>
+                <input type="text" class="form-control" id="city" autocomplete="off" formControlName="city" required>
+                <small>{{error}}</small>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!cityForm.valid">Submit</button>
+        </form>
+        <div *ngIf="changeButton">
+            <img src="https://openweathermap.org/img/wn/{{weatherData?.icon}}.png" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h5 class="card-title">{{weatherData?.cityName}}</h5>
+                <p class="card-text">Temp: {{weatherData?.temperature}}</p>
+                <p class="card-text">Description: {{weatherData?.description}}</p>
+                <p class="card-text">Humidity: {{weatherData?.humidity}}</p>
+                <p class="card-text">Wind: {{weatherData?.wind}}</p>
+                <button type="button" class="btn btn-primary" (click)="changeCity()">Change city</button>
+            </div>
+        </div>
+    </div>
+</div>

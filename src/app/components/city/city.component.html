@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card text-white bg-dark border-secondary">
+          <div class="card-header">
+            <!-- define the city name and country name in the following heading elemnets respectively -->
+            <h4>{{ cityDetails?.country }}</h4>
+            <h6>{{ cityDetails?.city }}</h6>
+          </div>
+          <div class="card-body">
+            <!-- define the weather forecast int he following div. Each div element should contain one day data  -->
+            <div
+              class="alert"
+              *ngFor="let w of cityDetails?.weather"
+              class="alert alert-secondary"
+            >
+              <p>date : {{ w.date }}</p>
+              <p>temperature : {{ w.temperature }}</p>
+              <p>weather_name : {{ w.weather_name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

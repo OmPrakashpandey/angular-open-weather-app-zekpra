@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="alert alert-info">
+      <!-- define the input with functionalities to call getCity() with cityname on enter key event -->
+      <input
+        type="text"
+        (change)="changeCity($event)"
+        class="form-control"
+        placeholder="Search for cities...."
+      />
+    </div>
+    <!-- define an error message 'No city found!' when search is true but no city details are available -->
+    <div *ngIf="search && !cityDetails" class="alert alert-danger">
+      <p class="text-danger">No city found!</p>
+    </div>
+  </div>
+</div>

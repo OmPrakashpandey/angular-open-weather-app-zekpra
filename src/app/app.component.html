@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <nav class="navbar navbar-light bg-secondary">
+        <a class="navbar-brand">
+          <h4>Weather Forecasting App</h4>
+        </a>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- inject the 'search' component and 'city' component here with required details -->
+      <app-search (selectedCity)="getSelectedCity($event)"></app-search>
+      <app-city [cityDetails]="cityDetails"></app-city>
+    </div>
+  </div>
+</div>
